@@ -231,9 +231,10 @@ a:hover {
 .logo-title {
   font-family: var(--font-tagline);
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 300;
   line-height: 1.1;
   letter-spacing: 0.02em;
+  word-spacing: 0.3em;
 }
 
 .logo-title-first {
@@ -241,7 +242,7 @@ a:hover {
 }
 
 .logo-title-second {
-  color: hsl(200, 60%, 45%);
+  color: hsl(210, 10%, 20%);
 }
 
 .logo-tagline {
