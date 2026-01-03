@@ -242,10 +242,9 @@ a:hover {
   font-size: 0.65rem;
   font-weight: 600;
   color: hsl(210, 15%, 40%);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.135em;
   text-transform: uppercase;
   line-height: 1.2;
-  max-width: 280px;
 }
 
 .nav-menu {
