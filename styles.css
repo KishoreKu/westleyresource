@@ -17,7 +17,7 @@
   --secondary-color: hsl(280, 70%, 55%);
   --accent-color: hsl(340, 85%, 55%);
   --success-color: hsl(150, 70%, 45%);
-  
+
   /* Neutrals */
   --dark-bg: hsl(220, 20%, 10%);
   --dark-surface: hsl(220, 18%, 15%);
@@ -27,16 +27,16 @@
   --text-dark: hsl(220, 15%, 15%);
   --text-light: hsl(0, 0%, 95%);
   --text-muted: hsl(220, 10%, 55%);
-  
+
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   --gradient-accent: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
   --gradient-hero: linear-gradient(135deg, hsl(220, 85%, 25%), hsl(280, 70%, 35%));
-  
+
   /* Typography */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  
+
   /* Spacing */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
@@ -44,24 +44,24 @@
   --spacing-lg: 2.5rem;
   --spacing-xl: 4rem;
   --spacing-2xl: 6rem;
-  
+
   /* Border Radius */
   --radius-sm: 0.5rem;
   --radius-md: 1rem;
   --radius-lg: 1.5rem;
   --radius-xl: 2rem;
-  
+
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
   --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.2);
-  
+
   /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-base: 0.3s ease;
   --transition-slow: 0.5s ease;
-  
+
   /* Z-index */
   --z-dropdown: 1000;
   --z-sticky: 1020;
@@ -74,7 +74,9 @@
 /* ===================================
    Reset & Base Styles
    =================================== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -99,7 +101,12 @@ body {
 /* ===================================
    Typography
    =================================== */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
   font-weight: 700;
   line-height: 1.2;
@@ -194,19 +201,47 @@ a:hover {
   margin: 0 auto;
 }
 
-.logo {
-  font-family: var(--font-display);
-  font-size: 1.75rem;
-  font-weight: 800;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   transition: transform var(--transition-fast);
+  text-decoration: none;
 }
 
-.logo:hover {
-  transform: scale(1.05);
+.logo-container:hover {
+  transform: scale(1.02);
+}
+
+.logo-icon {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.logo-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: hsl(200, 85%, 50%);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.logo-tagline {
+  font-family: var(--font-primary);
+  font-size: 0.5rem;
+  font-weight: 500;
+  color: hsl(200, 70%, 60%);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
 }
 
 .nav-menu {
@@ -562,6 +597,7 @@ a:hover {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -572,6 +608,7 @@ a:hover {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -582,6 +619,7 @@ a:hover {
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -593,6 +631,7 @@ a:hover {
     opacity: 0;
     transform: translateX(30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -629,15 +668,37 @@ a:hover {
   background-clip: text;
 }
 
-.mb-sm { margin-bottom: var(--spacing-sm); }
-.mb-md { margin-bottom: var(--spacing-md); }
-.mb-lg { margin-bottom: var(--spacing-lg); }
-.mb-xl { margin-bottom: var(--spacing-xl); }
+.mb-sm {
+  margin-bottom: var(--spacing-sm);
+}
 
-.mt-sm { margin-top: var(--spacing-sm); }
-.mt-md { margin-top: var(--spacing-md); }
-.mt-lg { margin-top: var(--spacing-lg); }
-.mt-xl { margin-top: var(--spacing-xl); }
+.mb-md {
+  margin-bottom: var(--spacing-md);
+}
+
+.mb-lg {
+  margin-bottom: var(--spacing-lg);
+}
+
+.mb-xl {
+  margin-bottom: var(--spacing-xl);
+}
+
+.mt-sm {
+  margin-top: var(--spacing-sm);
+}
+
+.mt-md {
+  margin-top: var(--spacing-md);
+}
+
+.mt-lg {
+  margin-top: var(--spacing-lg);
+}
+
+.mt-xl {
+  margin-top: var(--spacing-xl);
+}
 
 /* ===================================
    Responsive Design
@@ -656,35 +717,35 @@ a:hover {
     transition: left var(--transition-base);
     box-shadow: var(--shadow-lg);
   }
-  
+
   .nav-menu.active {
     left: 0;
   }
-  
+
   .nav-toggle {
     display: flex;
   }
-  
+
   .nav-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
-  
+
   .nav-toggle.active span:nth-child(2) {
     opacity: 0;
   }
-  
+
   .nav-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -6px);
   }
-  
+
   .hero-buttons {
     flex-direction: column;
   }
-  
+
   .btn {
     width: 100%;
   }
-  
+
   .grid-2,
   .grid-3,
   .grid-4 {
@@ -697,7 +758,7 @@ a:hover {
     --spacing-xl: 3rem;
     --spacing-2xl: 4rem;
   }
-  
+
   .section {
     padding: var(--spacing-xl) 0;
   }
