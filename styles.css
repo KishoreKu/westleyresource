@@ -249,7 +249,7 @@ a:hover {
   font-size: 0.65rem;
   font-weight: 600;
   color: hsl(210, 20%, 35%);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.185em;
   text-transform: uppercase;
   line-height: 1.2;
 }
