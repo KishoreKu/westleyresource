@@ -10,32 +10,32 @@
    CSS Custom Properties
    =================================== */
 :root {
-  /* Color Palette - Professional & Modern */
-  --primary-color: hsl(220, 85%, 45%);
-  --primary-dark: hsl(220, 85%, 35%);
-  --primary-light: hsl(220, 85%, 55%);
-  --secondary-color: hsl(280, 70%, 55%);
-  --accent-color: hsl(340, 85%, 55%);
+  /* Color Palette - Cyan/Teal Theme to match logo */
+  --primary-color: hsl(190, 85%, 45%);
+  --primary-dark: hsl(190, 85%, 35%);
+  --primary-light: hsl(190, 85%, 55%);
+  --secondary-color: hsl(200, 75%, 50%);
+  --accent-color: hsl(180, 70%, 45%);
   --success-color: hsl(150, 70%, 45%);
 
   /* Neutrals */
-  --dark-bg: hsl(220, 20%, 10%);
-  --dark-surface: hsl(220, 18%, 15%);
-  --dark-surface-light: hsl(220, 15%, 20%);
+  --dark-bg: hsl(200, 25%, 10%);
+  --dark-surface: hsl(200, 20%, 15%);
+  --dark-surface-light: hsl(200, 18%, 20%);
   --light-bg: hsl(0, 0%, 98%);
   --light-surface: hsl(0, 0%, 100%);
-  --text-dark: hsl(220, 15%, 15%);
+  --text-dark: hsl(200, 15%, 15%);
   --text-light: hsl(0, 0%, 95%);
-  --text-muted: hsl(220, 10%, 55%);
+  --text-muted: hsl(200, 10%, 55%);
 
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  --gradient-accent: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
-  --gradient-hero: linear-gradient(135deg, hsl(220, 85%, 25%), hsl(280, 70%, 35%));
+  --gradient-accent: linear-gradient(135deg, var(--accent-color), hsl(170, 70%, 50%));
+  --gradient-hero: linear-gradient(135deg, hsl(200, 85%, 25%), hsl(190, 75%, 35%));
 
   /* Typography */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Outfit', -apple-system, BlinkMacMacSystemFont, 'Segoe UI', sans-serif;
 
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -238,7 +238,7 @@ a:hover {
   font-family: var(--font-primary);
   font-size: 0.5rem;
   font-weight: 500;
-  color: hsl(200, 70%, 60%);
+  color: hsl(190, 75%, 55%);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   line-height: 1;
