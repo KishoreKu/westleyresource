@@ -27,3 +27,15 @@ jobs:
             **/node_modules/**
             **/.DS_Store
             **/README.md
+
+      - name: Send deployment event to Dynatrace
+        uses: dynatrace-oss/dynatrace-github-action@v9
+        with:
+          url: ${{ secrets.DT_URL }}
+          token: ${{ secrets.DT_TOKEN }}
+          events: |
+            - type: CUSTOM_DEPLOYMENT
+              properties:
+                job: "Deploy to cPanel"
+                status: "success"
+                version: "${{ github.sha }}"
