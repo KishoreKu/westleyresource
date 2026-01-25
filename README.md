@@ -51,18 +51,60 @@ The website uses CSS custom properties for consistent theming:
 
 ## 🌐 Deployment
 
-### cPanel Deployment
+### Firebase Hosting (Google Cloud Platform)
 
-1. Log in to your cPanel account
-2. Navigate to File Manager
-3. Go to `public_html` directory
-4. Upload all website files
-5. Ensure `index.html` is in the root directory
-6. Set proper file permissions (644 for files, 755 for directories)
+This website is automatically deployed to Firebase Hosting on Google Cloud Platform via GitHub Actions.
 
-### Domain Configuration
+#### Initial Setup
 
-Point your domain `westleyresource.com` to your hosting server's nameservers.
+1. **Install Firebase CLI**:
+   ```bash
+   npm install -g firebase-tools
+   ```
+
+2. **Login to Firebase**:
+   ```bash
+   firebase login
+   ```
+
+3. **Create a Firebase project** at [Firebase Console](https://console.firebase.google.com/)
+   - Project name: `westleyresource`
+   - Enable Google Analytics (optional)
+
+4. **Initialize Firebase in your project**:
+   ```bash
+   firebase init hosting
+   ```
+   - Select your Firebase project
+   - Set public directory to `.` (current directory)
+   - Configure as single-page app: No
+   - Don't overwrite existing files
+
+5. **Generate service account for GitHub Actions**:
+   - Go to Firebase Console → Project Settings → Service Accounts
+   - Click "Generate New Private Key"
+   - Save the JSON file securely
+   - Add it as a GitHub secret named `FIREBASE_SERVICE_ACCOUNT`
+
+#### Manual Deployment
+
+To deploy manually:
+```bash
+firebase deploy --only hosting
+```
+
+#### Automatic Deployment
+
+Every push to the `main` branch automatically deploys to Firebase Hosting via GitHub Actions.
+
+#### Custom Domain Configuration
+
+1. Go to Firebase Console → Hosting
+2. Click "Add custom domain"
+3. Enter `westleyresource.com`
+4. Follow DNS configuration instructions
+5. Firebase will automatically provision SSL certificates
+
 
 ## 📧 Contact Information
 

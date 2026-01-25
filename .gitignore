@@ -34,3 +34,9 @@ yarn-error.log*
 .htpasswds/
 .trash/
 error_log
+
+# Firebase
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
+.firebaserc

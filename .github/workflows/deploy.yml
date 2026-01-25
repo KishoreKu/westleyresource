@@ -1,4 +1,4 @@
-name: Deploy to cPanel
+name: Deploy to Firebase Hosting
 
 on:
   push:
@@ -14,19 +14,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       
-      - name: Deploy to cPanel via FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /public_html/
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/.DS_Store
-            **/README.md
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
+          channelId: live
+          projectId: westleyresource-5131d
 
       - name: Send deployment event to Dynatrace
         uses: dynatrace-oss/dynatrace-github-action@v9
@@ -36,6 +30,6 @@ jobs:
           events: |
             - type: CUSTOM_DEPLOYMENT
               properties:
-                job: "Deploy to cPanel"
+                job: "Deploy to Firebase Hosting"
                 status: "success"
                 version: "${{ github.sha }}"
